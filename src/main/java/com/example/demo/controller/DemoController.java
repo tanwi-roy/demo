@@ -11,4 +11,5 @@ public class DemoController {
     public String testEndpoint() {
         return "Welcome to Spring Application";
     }
+
 }
