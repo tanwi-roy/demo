@@ -26,3 +26,10 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+
+bootJar {
+	enabled = true
+	archiveFileName = "${project.name}.jar"
+	mainClassName = 'com.example.demo.DemoProjectApplication' // Replace 'com.example.Main' with your actual main class
+}
