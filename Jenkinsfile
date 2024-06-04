@@ -45,7 +45,7 @@ pipeline {
                     steps {
                         script {
                             //sh 'docker run -d $DOCKER_IMAGE'
-                            sh 'docker run $(docker images --format=\'{{.ID}}\' | head -1)'
+                            sh 'docker run -p 8090:8090 $(docker images --format=\'{{.ID}}\' | head -1)'
                         }
                     }
                 }
