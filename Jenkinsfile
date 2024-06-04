@@ -44,7 +44,8 @@ pipeline {
         stage('Run Docker Image') {
                     steps {
                         script {
-                            sh 'docker run -d $DOCKER_IMAGE'
+                            //sh 'docker run -d $DOCKER_IMAGE'
+                            sh 'docker run $(docker images | awk '{print $1}' | awk 'NR==2')'
                         }
                     }
                 }
