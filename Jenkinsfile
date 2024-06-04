@@ -40,6 +40,14 @@ pipeline {
                         }
                     }
                 }
+
+        stage('Run Docker Image') {
+                    steps {
+                        script {
+                            sh 'docker run -d $DOCKER_IMAGE'
+                        }
+                    }
+                }
 //           stage('Run jar') {
 //             steps {
 //                 sh 'cd build/libs'
@@ -47,6 +55,8 @@ pipeline {
 //                 sh 'java -jar build/libs/demo.jar'
 //             }
 //         }
+
+
 //         stage('Push Docker Image') {
 //             steps {
 //                 script {
