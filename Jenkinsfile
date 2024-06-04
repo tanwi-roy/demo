@@ -45,7 +45,7 @@ pipeline {
                     steps {
                         script {
                             //sh 'docker run -d $DOCKER_IMAGE'
-                            sh 'docker run $(docker images | awk '{print $1}' | awk 'NR==2')'
+                            sh 'docker run -it $(docker images --format='{{.ID}}' | head -1)'
                         }
                     }
                 }
