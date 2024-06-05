@@ -8,8 +8,8 @@ public class DemoController {
 
     @GetMapping("/api/test")
     public String testEndpoint() {
-        String str = "Welcome to Spring Application";
-        return str;
+        return "Welcome to Spring Application";
+
     }
 
 }
